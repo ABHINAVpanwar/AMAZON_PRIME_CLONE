@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="IMG/icon.png" />
+    <title>Welcome to Prime Video</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #nav {
+        height: 64px;
+        background-color: #0f171e;
+        position: fixed;
+        width: 100vw;
+        z-index: 1;
+      }
+      #logo {
+        height: 64px;
+        padding-left: 30px;
+      }
+      ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      li {
+        list-style: none;
+        padding-right: 20px;
+      }
+      a {
+        text-decoration: none;
+        color: #d1d4d7;
+        font-size: 18px;
+        font-family: "Roboto", sans-serif;
+      }
+      #fucked {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: absolute;
+        right: 5px;
+      }
+      #FREE {
+        margin-left: 280px;
+        background-color: #0e7490;
+        width: 120px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2px;
+      }
+      #FREE:hover {
+        background-color: #00afe7;
+      }
+      #free {
+        font-family: "Quicksand", sans-serif;
+      }
+      #search {
+        width: 36px;
+        height: 36px;
+      }
+      #search:hover {
+        cursor: pointer;
+      }
+      #browser {
+        width: 28px;
+        height: 28px;
+        filter: invert();
+      }
+      #browser:hover {
+        cursor: pointer;
+      }
+      #language {
+        background-color: #0f171e;
+        color: #d1d4d7;
+        font-size: 18px;
+        border: 1px solid #0f171e;
+        border-radius: 2px;
+      }
+      option {
+        background-color: #0f171e;
+        font-family: "Roboto", sans-serif;
+      }
+      #user {
+        width: 36px;
+        height: 36px;
+      }
+      #sign_in {
+        background-color: #0f171e;
+        color: #d1d4d7;
+        font-size: 18px;
+        border: 1px solid #0f171e;
+        border-radius: 2px;
+        width: 20px;
+      }
+      #U {
+        display: flex;
+        flex-direction: row;
+      }
+      #S1 {
+        position: absolute;
+        top: 64px;
+        display: flex;
+        flex-direction: row;
+      }
+      .s1 {
+        height: 540px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #ele1 {
+        background-color: black;
+        width: 44vw;
+      }
+      #ele2 {
+        width: 56vw;
+      }
+      #itm1 {
+        color: #fff;
+        font-family: "Quicksand", sans-serif;
+        margin-top: 18px;
+        margin-bottom: 18px;
+        font-size: 45px;
+        margin-left: 20px;
+      }
+      #itm2 {
+        color: #fff;
+        font-family: "Quicksand", sans-serif;
+        margin-top: 18px;
+        margin-bottom: 18px;
+        font-size: 25px;
+        margin-left: 20px;
+      }
+      #itm3 {
+        color: #fff;
+        font-family: "Quicksand", sans-serif;
+        font-weight: lighter;
+        margin-top: 18px;
+        margin-bottom: 18px;
+        width: 250px;
+        margin-left: 20px;
+        height: 50px;
+        background-color: #06b6d4;
+        border: 3px solid #fff;
+        border-radius: 3px;
+        font-size: 18px;
+      }
+      #itm3:hover {
+        background-color: #0891b2;
+        cursor: pointer;
+      }
+      #S2 {
+        position: absolute;
+        top: 604px;
+        display: flex;
+        flex-direction: row;
+      }
+      .s2 {
+        height: 540px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #elem1 {
+        width: 56vw;
+      }
+      #elem2 {
+        background-color: black;
+        width: 44vw;
+      }
+      #item1 {
+        color: #fff;
+        font-family: "Quicksand", sans-serif;
+        margin-top: 18px;
+        margin-bottom: 18px;
+        font-size: 45px;
+        margin-left: 20px;
+      }
+      #item2 {
+        color: #fff;
+        font-family: "Quicksand", sans-serif;
+        margin-top: 18px;
+        margin-bottom: 18px;
+        font-size: 25px;
+        margin-left: 20px;
+      }
+      #item3 {
+        color: #fff;
+        font-family: "Quicksand", sans-serif;
+        font-weight: lighter;
+        margin-top: 18px;
+        margin-bottom: 18px;
+        width: 150px;
+        margin-left: 20px;
+        height: 50px;
+        background-color: #06b6d4;
+        border: 3px solid #fff;
+        border-radius: 3px;
+        font-size: 18px;
+      }
+      #item3:hover {
+        background-color: #0891b2;
+        cursor: pointer;
+      }
+      #S3 {
+        position: absolute;
+        top: 1144px;
+        display: flex;
+        flex-direction: row;
+      }
+      .s3 {
+        height: 530px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #div1 {
+        width: 50vw;
+      }
+      #div2 {
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #H1 {
+        font-size: 45px;
+        font-family: "Quicksand", sans-serif;
+        margin-top: 18px;
+        margin-bottom: 18px;
+        margin-left: 20px;
+      }
+      #H3 {
+        font-size: 25px;
+        font-family: "Quicksand", sans-serif;
+        margin-top: 18px;
+        margin-bottom: 18px;
+        margin-left: 20px;
+      }
+      #row {
+        display: flex;
+        flex-direction: row;
+        margin-top: 6px;
+        margin-bottom: 6px;
+      }
+      .IMAGES {
+        height: 110px;
+        width: 170px;
+        margin-left: 6px;
+        margin-right: 6px;
+      }
+      .IMAGES:hover {
+        cursor: pointer;
+        opacity: 0.5;
+        transition: all 1.5s;
+      }
+      #S4 {
+        position: absolute;
+        top: 1674px;
+        display: flex;
+        flex-direction: row;
+      }
+      .s4 {
+        height: 540px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #ELEM1 {
+        width: 56vw;
+      }
+      #ELEM2 {
+        background-color: black;
+        width: 44vw;
+      }
+      #ITM1 {
+        color: #fff;
+        font-family: "Quicksand", sans-serif;
+        margin-top: 18px;
+        margin-bottom: 18px;
+        font-size: 40px;
+        margin-right: 20px;
+      }
+      #ITM2 {
+        color: #fff;
+        font-family: "Quicksand", sans-serif;
+        margin-top: 18px;
+        margin-bottom: 18px;
+        font-size: 25px;
+        margin-right: 20px;
+      }
+      #ITM3 {
+        color: #fff;
+        font-family: "Quicksand", sans-serif;
+        font-weight: lighter;
+        margin-top: 18px;
+        margin-bottom: 18px;
+        width: 150px;
+        height: 50px;
+        background-color: #06b6d4;
+        border: 3px solid #fff;
+        border-radius: 3px;
+        font-size: 18px;
+        margin-right: 20px;
+      }
+      #ITM3:hover {
+        background-color: #0891b2;
+        cursor: pointer;
+      }
+      #S5 {
+        position: absolute;
+        top: 2214px;
+        display: flex;
+        flex-direction: row;
+      }
+      .s5 {
+        height: 540px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #ELEMENT1 {
+        background-color: black;
+        width: 44vw;
+      }
+      #ELEMENT2 {
+        width: 56vw;
+      }
+      #ITEMS1 {
+        color: #fff;
+        font-family: "Quicksand", sans-serif;
+        margin-top: 18px;
+        margin-bottom: 18px;
+        font-size: 45px;
+        margin-left: 20px;
+      }
+      #ITEMS2 {
+        color: #fff;
+        font-family: "Quicksand", sans-serif;
+        margin-top: 18px;
+        margin-bottom: 18px;
+        font-size: 25px;
+        margin-left: 20px;
+      }
+      #ITEMS3 {
+        color: #fff;
+        font-family: "Quicksand", sans-serif;
+        font-weight: lighter;
+        margin-top: 18px;
+        margin-bottom: 18px;
+        width: 250px;
+        margin-left: 20px;
+        height: 50px;
+        background-color: #06b6d4;
+        border: 3px solid #fff;
+        border-radius: 3px;
+        font-size: 18px;
+      }
+      #ITEMS3:hover {
+        background-color: #0891b2;
+        cursor: pointer;
+      }
+      #S6 {
+        position: absolute;
+        top: 2754px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        background-color: #222;
+        height: 180px;
+      }
+      .foot {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      #footer1 {
+        width: 110px;
+        height: 38px;
+      }
+      #footer2 a {
+        color: #0e9fe0;
+        margin-left: 20px;
+        margin-right: 20px;
+        font-family: "Quicksand", sans-serif;
+      }
+      #footer3 {
+        color: #898f94;
+        font-family: "Quicksand", sans-serif;
+      }
+      @media screen and (min-width: 700px) and (max-width: 1100px) {
+        ul {
+          display: none;
+        }
+        #S1 {
+          position: absolute;
+          top: 64px;
+          height: 800px;
+          flex-direction: column;
+        }
+        #ele1 {
+          width: 100vw;
+          height: 400px;
+        }
+        #ele2 {
+          width: 100vw;
+          height: 400px;
+        }
+        #S2 {
+          flex-direction: column-reverse;
+          position: absolute;
+          height: 800px;
+          top: 864px;
+        }
+        #elem1 {
+          width: 100vw;
+          height: 400px;
+        }
+        #elem2 {
+          width: 100vw;
+          height: 400px;
+        }
+        #S3 {
+          flex-direction: column;
+          position: absolute;
+          top: 1664px;
+          height: 1000px;
+        }
+        #div1 {
+          width: 100vw;
+          height: 400px;
+        }
+        #div2 {
+          width: 100vw;
+          height: 600px;
+        }
+        #S4 {
+          position: absolute;
+          top: 2664px;
+          display: flex;
+          flex-direction: column-reverse;
+          height: 800px;
+        }
+        #ELEM1 {
+          width: 100vw;
+          height: 400px;
+        }
+        #ELEM2 {
+          width: 100vw;
+          height: 400px;
+        }
+        #ITM1 {
+          margin-left: 20px;
+        }
+        #ITM2 {
+          margin-left: 20px;
+        }
+        #ITM3 {
+          margin-left: 20px;
+        }
+        #S5 {
+          position: absolute;
+          top: 3464px;
+          display: flex;
+          flex-direction: column;
+          height: 800px;
+        }
+        #ELEMENT1 {
+          width: 100vw;
+          height: 400px;
+        }
+        #ELEMENT2 {
+          width: 100vw;
+          height: 400px;
+        }
+        #S6 {
+          position: absolute;
+          top: 4264px;
+          height: 140px;
+        }
+      }
+      @media screen and (min-width: 400px) and (max-width: 700px) {
+        ul {
+          display: none;
+        }
+        #S1 {
+          position: absolute;
+          top: 64px;
+          height: 800px;
+          flex-direction: column;
+        }
+        #ele1 {
+          width: 100vw;
+          height: 400px;
+        }
+        #ele2 {
+          width: 100vw;
+          height: 400px;
+        }
+        #itm1 {
+          font-size: 30px;
+        }
+        #itm2 {
+          font-size: 25px;
+        }
+        #itm3 {
+          font-size: 15px;
+        }
+        #S2 {
+          flex-direction: column-reverse;
+          position: absolute;
+          height: 800px;
+          top: 864px;
+        }
+        #elem1 {
+          width: 100vw;
+          height: 400px;
+        }
+        #elem2 {
+          width: 100vw;
+          height: 400px;
+        }
+        #item1 {
+          font-size: 30px;
+        }
+        #item2 {
+          font-size: 25px;
+        }
+        #item3 {
+          font-size: 15px;
+        }
+        #S3 {
+          flex-direction: column;
+          position: absolute;
+          top: 1664px;
+          height: 800px;
+        }
+        #div1 {
+          width: 100vw;
+          height: 400px;
+        }
+        #div2 {
+          width: 100vw;
+          height: 400px;
+        }
+        #H1 {
+          font-size: 30px;
+        }
+        #H3 {
+          font-size: 25px;
+        }
+        .IMAGES {
+          height: 70px;
+          width: 120px;
+        }
+        #S4 {
+          position: absolute;
+          top: 2464px;
+          display: flex;
+          flex-direction: column-reverse;
+          height: 800px;
+        }
+        #ELEM1 {
+          width: 100vw;
+          height: 400px;
+        }
+        #ELEM2 {
+          width: 100vw;
+          height: 400px;
+        }
+        #ITM1 {
+          margin-left: 20px;
+          font-size: 25px;
+        }
+        #ITM2 {
+          margin-left: 20px;
+          font-size: 20px;
+        }
+        #ITM3 {
+          margin-left: 20px;
+          font-size: 15px;
+        }
+        #S5 {
+          position: absolute;
+          top: 3264px;
+          display: flex;
+          flex-direction: column;
+          height: 800px;
+        }
+        #ELEMENT1 {
+          width: 100vw;
+          height: 400px;
+        }
+        #ELEMENT2 {
+          width: 100vw;
+          height: 400px;
+        }
+        #ITEMS1 {
+          font-size: 25px;
+        }
+        #ITEMS2 {
+          font-size: 20px;
+        }
+        #ITEMS3 {
+          font-size: 15px;
+        }
+        #S6 {
+          position: absolute;
+          top: 4064px;
+          height: 140px;
+        }
+        .foot {
+          margin-top: 5px;
+          margin-bottom: 5px;
+        }
+        #footer1 {
+          width: 80px;
+          height: 28px;
+        }
+        #footer2 a {
+          color: #0e9fe0;
+          margin-left: 10px;
+          margin-right: 10px;
+          font-family: "Quicksand", sans-serif;
+          font-size: 15px;
+        }
+        #footer3 {
+          color: #898f94;
+          font-family: "Quicksand", sans-serif;
+          font-size: 15px;
+        }
+      }
+      @media screen and (max-width: 400px) {
+        ul {
+          display: none;
+        }
+        #S1 {
+          position: absolute;
+          top: 64px;
+          height: 800px;
+          flex-direction: column;
+        }
+        #ele1 {
+          width: 100vw;
+          height: 400px;
+        }
+        #ele2 {
+          width: 100vw;
+          height: 400px;
+        }
+        #itm1 {
+          font-size: 30px;
+        }
+        #itm2 {
+          font-size: 25px;
+        }
+        #itm3 {
+          font-size: 15px;
+        }
+        #S2 {
+          flex-direction: column-reverse;
+          position: absolute;
+          height: 800px;
+          top: 864px;
+        }
+        #elem1 {
+          width: 100vw;
+          height: 400px;
+        }
+        #elem2 {
+          width: 100vw;
+          height: 400px;
+        }
+        #item1 {
+          font-size: 30px;
+        }
+        #item2 {
+          font-size: 25px;
+        }
+        #item3 {
+          font-size: 15px;
+        }
+        #S3 {
+          flex-direction: column;
+          position: absolute;
+          top: 1664px;
+          height: 800px;
+        }
+        #div1 {
+          width: 100vw;
+          height: 400px;
+        }
+        #div2 {
+          width: 100vw;
+          height: 400px;
+        }
+        #H1 {
+          font-size: 30px;
+        }
+        #H3 {
+          font-size: 25px;
+        }
+        .IMAGES {
+          height: 50px;
+          width: 95px;
+        }
+        #S4 {
+          position: absolute;
+          top: 2464px;
+          display: flex;
+          flex-direction: column-reverse;
+          height: 800px;
+        }
+        #ELEM1 {
+          width: 100vw;
+          height: 400px;
+        }
+        #ELEM2 {
+          width: 100vw;
+          height: 400px;
+        }
+        #ITM1 {
+          margin-left: 20px;
+          font-size: 25px;
+        }
+        #ITM2 {
+          margin-left: 20px;
+          font-size: 20px;
+        }
+        #ITM3 {
+          margin-left: 20px;
+          font-size: 15px;
+        }
+        #S5 {
+          position: absolute;
+          top: 3264px;
+          display: flex;
+          flex-direction: column;
+          height: 800px;
+        }
+        #ELEMENT1 {
+          width: 100vw;
+          height: 400px;
+        }
+        #ELEMENT2 {
+          width: 100vw;
+          height: 400px;
+        }
+        #ITEMS1 {
+          font-size: 25px;
+        }
+        #ITEMS2 {
+          font-size: 20px;
+        }
+        #ITEMS3 {
+          font-size: 15px;
+        }
+        #S6 {
+          position: absolute;
+          top: 4064px;
+          height: 140px;
+        }
+        .foot {
+          margin-top: 5px;
+          margin-bottom: 5px;
+        }
+        #footer1 {
+          width: 70px;
+          height: 25px;
+        }
+        #footer2 a {
+          color: #0e9fe0;
+          margin-left: 6px;
+          margin-right: 6px;
+          font-family: "Quicksand", sans-serif;
+          font-size: 10px;
+        }
+        #footer3 {
+          color: #898f94;
+          font-family: "Quicksand", sans-serif;
+          font-size: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="nav">
+      <ul>
+        <li><img src="IMG/logo.png" id="logo" /></li>
+        <li><a href="">Home</a></li>
+        <li><a href="">Store</a></li>
+        <li><a href="">Channels</a></li>
+        <li><a href="">Categories</a></li>
+        <li><a href="">My Stuff</a></li>
+        <div id="fucked">
+          <li>
+            <div id="FREE"><a href="" id="free">Try For Free</a></div>
+          </li>
+          <li><img src="IMG/search.webp" id="search" /></li>
+          <li><img src="IMG/browser.jpg" id="browser" /></li>
+          <li>
+            <select name="LANGUAGE" id="language">
+              <option value="english">ENG</option>
+              <option value="hindi">HIN</option>
+              <option value="chinese">CHI</option>
+              <option value="french">FRE</option>
+              <option value="german">GER</option>
+              <option value="portuguese">POR</option>
+              <option value="russian">RUS</option>
+            </select>
+          </li>
+          <li id="U">
+            <img src="IMG/user.png" id="user" />
+            <select name="USER" id="sign_in">
+              <option value="english">Sign In</option>
+              <option value="english">Watch Anywhere</option>
+              <option value="chinese">Help</option>
+            </select>
+          </li>
+        </div>
+      </ul>
+    </nav>
+
+    <section id="S1">
+      <div class="s1" id="ele1">
+        <h1 id="itm1">Welcome to Prime Video</h1>
+        <h3 id="itm2">
+          Watch the latest movies, TV shows, and award-winning Amazon Originals
+        </h3>
+        <button id="itm3">Sign In For Join Prime</button>
+      </div>
+      <img src="IMG/S1.jpg" class="s1" id="ele2" />
+    </section>
+
+    <section id="S2">
+      <img src="IMG/S2.jpg" class="s2" id="elem1" />
+      <div class="s2" id="elem2">
+        <h1 id="item1">Movie rentals on Prime Video</h1>
+        <h3 id="item2">
+          Early Access to new movies, before digital subscription
+        </h3>
+        <button id="item3">Rent Now</button>
+      </div>
+    </section>
+
+    <section id="S3">
+      <div class="s3" id="div1">
+        <h1 id="H1">Your favorite channels all in one place</h1>
+        <h3 id="H3">
+          With Prime Video Channels, find shows and movies from your favorite
+          channels all in one place. Enjoy with an add-on subscription to
+          Channels of your choice
+        </h3>
+      </div>
+      <div class="s3" id="div2">
+        <div id="row">
+          <img src="IMG/1.jpg" class="IMAGES" />
+          <img src="IMG/2.jpg" class="IMAGES" />
+          <img src="IMG/3.png" class="IMAGES" />
+        </div>
+        <div id="row">
+          <img src="IMG/4.jpg" class="IMAGES" />
+          <img src="IMG/5.jpg" class="IMAGES" />
+          <img src="IMG/6.png" class="IMAGES" />
+        </div>
+        <div id="row">
+          <img src="IMG/7.jpg" class="IMAGES" />
+          <img src="IMG/8.png" class="IMAGES" />
+          <img src="IMG/9.jpg" class="IMAGES" />
+        </div>
+        <div id="row">
+          <img src="IMG/10.jpg" class="IMAGES" />
+          <img src="IMG/11.png" class="IMAGES" />
+          <img src="IMG/12.png" class="IMAGES" />
+        </div>
+      </div>
+    </section>
+
+    <section id="S4">
+      <img src="IMG/S4.jpg" class="s4" id="ELEM1" />
+      <div class="s4" id="ELEM2">
+        <h1 id="ITM1">Even better with Fire TV Stick</h1>
+        <h3 id="ITM2">
+          The biggest movies and TV shows are always better on a big screen.
+          Simply plug in your Amazon Fire TV Stick and stream on any HDTV. Press
+          the voice button on the remote and say the name of the title you want
+          to watch to find it in seconds.
+        </h3>
+        <button id="ITM3">Get Started</button>
+      </div>
+    </section>
+
+    <section id="S5">
+      <div class="s5" id="ELEMENT1">
+        <h1 id="ITEMS1">Family Friendly</h1>
+        <h3 id="ITEMS2">
+          With easy to use Parental Controls and a dedicated kids page, enjoy
+          secure, ad-free kids entertainment. Kids can enjoy popular TV shows
+          like Peppa Pig, Powerpuff Girls, and Chhota Bheem.
+        </h3>
+        <button id="ITEMS3">Get Started</button>
+      </div>
+      <img src="IMG/S5.jpg" class="s5" id="ELEMENT2" />
+    </section>
+
+    <section id="S6">
+      <img src="IMG/Footer.png" id="footer1" class="foot" />
+      <div id="footer2" class="foot">
+        <a href="">Terms and Privacy Notice</a>
+        <a href="">Send us feedback</a>
+        <a href="">Help</a>
+      </div>
+      <div id="footer3" class="foot">
+        © 1996-2022, Amazon.com, Inc. or its affiliates
+      </div>
+    </section>
+  </body>
+</html>
